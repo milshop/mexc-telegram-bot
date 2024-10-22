@@ -2,7 +2,7 @@ const { Telegraf } = require("telegraf");
 const fetch = require("node-fetch"); // 用于请求 API
 
 // Telegram Bot Token
-const BOT_TOKEN = "7703677941:AAGN1vo8U1UCJt90VQO3kzfwJUnEsJtEk8E";
+const BOT_TOKEN = "TOKEN";
 const bot = new Telegraf(BOT_TOKEN);
 
 let currentSymbols = new Set();
@@ -32,7 +32,7 @@ async function checkNewSymbols() {
     if (newListings.length > 0) {
       const message = `新的交易对上线了: ${newListings.join(", ")}`;
       // 使用bot.telegram.sendMessage发送消息，而不是ctx.reply
-      bot.telegram.sendMessage("1128368090", message); // 替换 '1128368090' 为你和机器人的对话ID
+      bot.telegram.sendMessage("id", message); // 
       console.log("发送消息:", message);
     }
 
